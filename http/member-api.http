@@ -1,0 +1,68 @@
+### Member API Test
+
+@local = http://localhost:8080
+@railway = https://render-deploy-production-0f1f.up.railway.app
+
+### 전체 조회
+GET {{local}}/api/members
+Content-Type: application/json
+
+### 단건 조회
+GET {{local}}/api/members/1
+Content-Type: application/json
+
+### 생성
+POST {{local}}/api/members
+Content-Type: application/json
+
+{
+  "name": "홍길동",
+  "email": "hong@example.com"
+}
+
+### 수정
+PUT {{local}}/api/members/1
+Content-Type: application/json
+
+{
+  "name": "홍길동(수정)",
+  "email": "hong_updated@example.com"
+}
+
+### 삭제
+DELETE {{local}}/api/members/1
+Content-Type: application/json
+
+###############################################
+### Railway 환경 테스트
+###############################################
+
+### [Railway] 전체 조회
+GET {{railway}}/api/members
+Content-Type: application/json
+
+### [Railway] 단건 조회
+GET {{railway}}/api/members/1
+Content-Type: application/json
+
+### [Railway] 생성
+POST {{railway}}/api/members
+Content-Type: application/json
+
+{
+  "name": "Railway User",
+  "email": "railway@example.com"
+}
+
+### [Railway] 수정
+PUT {{railway}}/api/members/1
+Content-Type: application/json
+
+{
+  "name": "Railway User(수정)",
+  "email": "railway_updated@example.com"
+}
+
+### [Railway] 삭제
+DELETE {{railway}}/api/members/1
+Content-Type: application/json
